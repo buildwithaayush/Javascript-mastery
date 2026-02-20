@@ -18,3 +18,12 @@ console.log(APPLE)
 
 num = 5
 console.log(num)
+
+let admin , name ;
+name = "jhon";
+admin = name;
+
+let ourPlanetName = "earth";
+let currentUserName = 1
+
+alert(admin)
