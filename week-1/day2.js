@@ -25,13 +25,13 @@ console.log(typeof "0")
 
 //prompts 
 // prompts are modal window which accepts two arguments and where we can give back data also in input fields
-let age = prompt('how old are you?')
-alert(`you are ${age} old`)
+// let age = prompt('how old are you?')
+// alert(`you are ${age} old`)
 
 // confirm
 // confirm is also a modal window which ask a boolean question and results in either a true or false. 
-let isBoss = confirm('are you boss?')
-alert(isBoss)
+// let isBoss = confirm('are you boss?')
+// alert(isBoss)
 // We covered 3 browser-specific functions to interact with visitors:
 
 // alert
@@ -43,18 +43,18 @@ alert(isBoss)
 
 // conversion 
 // string conversion 
-let numb = 27 
-alert(typeof numb)
-value = String(numb)
-alert(typeof value)
+// let numb = 27 
+// alert(typeof numb)
+// value = String(numb)
+// alert(typeof value)
 
 // Numeric conversion 
-let strt = "123";
-alert(typeof strt); // string
+// let strt = "123";
+// alert(typeof strt); // string
 
-let numt = Number(strt); // becomes a number 123
+// let numt = Number(strt); // becomes a number 123
 
-alert(typeof num); // number
+// alert(typeof numt); // number
 
 // conversion of null will become zero 
 let xyz = Number(null)
@@ -63,11 +63,29 @@ console.log(xyz)
 // boolean true will be converted to 1  
 let btrue = true 
 val = Number(btrue)
-alert(val)
+// alert(val)
 
 //false will be converted to 0
 let bfal = false
 valf = Number(bfal)
-alert(valf)
+// alert(valf)
 
 // and vice versa 1 to boolean will be true and 0 to boolean will be false 
+
+// Math operator 
+// % remainder operator 
+console.log(5%2) //1 is remainder 
+
+
+// Exponentiation **
+
+// The exponentiation operator a ** b raises a to the power of b.
+
+console.log(3**2) // 9 is 3 raised to power 2. 
+
+let counter = 0 
+let a = ++counter;
+console.log(a)
+a=counter++
+console.log(a)
+console.log(counter)
