@@ -40,3 +40,34 @@ alert(isBoss)
 // shows a message asking the user to input text. It returns the text or, if Cancel button or Esc is clicked, null.
 // confirm
 // shows a message and waits for the user to press “OK” or “Cancel”. It returns true for OK and false for Cancel/Esc.
+
+// conversion 
+// string conversion 
+let numb = 27 
+alert(typeof numb)
+value = String(numb)
+alert(typeof value)
+
+// Numeric conversion 
+let strt = "123";
+alert(typeof strt); // string
+
+let numt = Number(strt); // becomes a number 123
+
+alert(typeof num); // number
+
+// conversion of null will become zero 
+let xyz = Number(null)
+console.log(xyz)
+
+// boolean true will be converted to 1  
+let btrue = true 
+val = Number(btrue)
+alert(val)
+
+//false will be converted to 0
+let bfal = false
+valf = Number(bfal)
+alert(valf)
+
+// and vice versa 1 to boolean will be true and 0 to boolean will be false 
