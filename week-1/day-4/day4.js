@@ -72,8 +72,22 @@ let i = 0
 //     }
 // }
 
-let va = 0
-while(va < 3){
-    console.log(va)
-    va++;
+// let va = 0
+// while(va < 3){
+//     console.log(va)
+//     va++;
+// }
+
+// let va = 10;
+// while(va > 0){
+// console.log(va);
+// va--;
+// }
+
+let va = 5 ;
+let f = 1;
+while(va > 0){
+f *= va;
+va--;
 }
+console.log(f);
