@@ -212,3 +212,75 @@ let arr = ['apple','banana','Orange',]
 
 // toString 
 // console.log(toString(arr))
+
+let numbers = [1,2,3,4,5];
+
+// 1. // iterate through array
+// numbers.forEach(num => {
+//     console.log(num * 2)
+// })
+
+// 2. // map - transform each element
+// let doubled = numbers.map(num => num * 3)
+// console.log(doubled)
+
+// 3. // filter get elements that match condition 
+// let evens = numbers.filter(num => num%2===0);
+// console.log(evens)
+
+// 4. // find - get first element that matches 
+//    let firstEven = numbers.find(num => num % 2 === 0)
+//    console.log(firstEven)
+
+// 5. // reduce - reduce array to single value 
+    // let sum = numbers.reduce((total,num) => total + num , 0);
+    // console.log(sum);
+// 6. some - check if ANY element matches
+// let hasEven = numbers.some(num => num % 2 === 0);
+// console.log(hasEven)
+
+// 7. every - check if all elements match 
+// let allPositive = numbers.every(num => num > 0)
+// console.log(allPositive)
+
+// ========================================
+// YOUR PRACTICE PROBLEMS
+// ========================================
+
+let students = [
+  { name: "Alice", age: 20, grade: 85 },
+  { name: "Bob", age: 22, grade: 92 },
+  { name: "Charlie", age: 21, grade: 78 },
+  { name: "David", age: 20, grade: 95 }
+];
+
+// Task 1: Get all student names (use map)
+// Expected: ["Alice", "Bob", "Charlie", "David"]
+
+// let names = students.map(boys => boys.name)
+// console.log(names)
+
+// Task 2: Get students with grade >= 90 (use filter)
+// Expected: [{name: "Bob", ...}, {name: "David", ...}]
+// so here we will use filter to find match conditions 
+
+// let toppers = students.filter( data => data.grade >= 90)
+// console.log(toppers)
+
+// Task 3: Find first student age 21 (use find)
+// Expected: {name: "Charlie", ...}
+
+let senior = students.find(st => st.age === 21)
+console.log(senior)
+
+// Task 4: Calculate average grade (use reduce)
+// Expected: 87.5
+
+
+// Task 5: Check if any student is under 20 (use some)
+// Expected: false
+
+// Task 6: Check if all students passed (grade >= 70) (use every)
+// Expected: true
+
+// WRITE YOUR SOLUTIONS HERE
