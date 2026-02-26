@@ -68,27 +68,78 @@
 // console.log(calculate(10, 5, "+")); // 15
 // console.log(calculate(10, 5, "$")); // 50
 
-// Task 3: Grade to GPA
-function gradeToGPA(grade) {
-    switch(grade){
-        case 'A':
-            return '4.0'
-        case 'B':
-            return '3.0'
-        case 'C':
-            return '2.0'
-        case 'D':
-            return '1.0'
-        case 'F':
-            return '0.0'
-        default:
-            return 'Invalid grade'
+// // Task 3: Grade to GPA
+// function gradeToGPA(grade) {
+//     switch(grade){
+//         case 'A':
+//             return '4.0'
+//         case 'B':
+//             return '3.0'
+//         case 'C':
+//             return '2.0'
+//         case 'D':
+//             return '1.0'
+//         case 'F':
+//             return '0.0'
+//         default:
+//             return 'Invalid grade'
+//     }
+//   // A -> 4.0
+//   // B -> 3.0
+//   // C -> 2.0
+//   // D -> 1.0
+//   // F -> 0.0
+//   // Use switch
+// }
+// console.log(gradeToGPA('E'));
+// Functions 
+
+// function showMessage(from,text = 'no text given'){
+//     from = '*' + from + '*';
+//     return (from + ': '+text);
+
+// }
+// let from = 'ayush'
+// console.log(showMessage(from,'hello world'));
+// console.log(from)
+
+// let sayHi = function() {        // function expression
+// return('hello')
+// };
+
+// let func = sayHi;
+// console.log(func);
+
+// Callback functions
+
+
+// arrow function 
+// let abc = () => console.log('hello')
+// abc();
+
+// YOUR PRACTICE:
+// 1. Create isEven() as arrow function
+// 2. Create getFullName(first, last) as function expression
+// 3. Create getMax(a, b, c) as arrow function
+// 4. Create reverseString(str) any way you want
+
+ let isEven = (num) => {
+    if(num%2==0){
+        console.log('iseven')
     }
-  // A -> 4.0
-  // B -> 3.0
-  // C -> 2.0
-  // D -> 1.0
-  // F -> 0.0
-  // Use switch
+    else{
+        console.log('isodd')
+    }
+ }
+isEven(8)
+
+let greet = function(first, last){
+  return `hello ${first} ${last}`
 }
-console.log(gradeToGPA('E'));
+greet('ayush','singh');
+
+let getmax = (a,b,c) => {
+    return b;
+}
+
+
