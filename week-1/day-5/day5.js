@@ -270,17 +270,23 @@ let students = [
 // Task 3: Find first student age 21 (use find)
 // Expected: {name: "Charlie", ...}
 
-let senior = students.find(st => st.age === 21)
-console.log(senior)
+// let senior = students.find(st => st.age === 2)
+// console.log(senior)
 
 // Task 4: Calculate average grade (use reduce)
-// Expected: 87.5
-
+// Expected: 87.5 
+// let sum = students.reduce((sum,current) => current.grade + sum, 0)
+// let avg = sum/students.length
+// console.log(avg)
 
 // Task 5: Check if any student is under 20 (use some)
 // Expected: false
+// let adult = students.some(num => num.age < 20)
+// console.log(adult)
 
-// Task 6: Check if all students passed (grade >= 70) (use every)
-// Expected: true
+// // Task 6: Check if all students passed (grade >= 70) (use every)
+// // Expected: true
+// let pass = students.every(num => num.grade >= 70)
+// console.log(pass)
 
 // WRITE YOUR SOLUTIONS HERE
