@@ -84,10 +84,10 @@ let i = 0
 // va--;
 // }
 
-let va = 5 ;
-let f = 1;
-while(va > 0){
-f *= va;
-va--;
-}
-console.log(f);
+// let va = 5 ;
+// let f = 1;
+// while(va > 0){
+// f *= va;
+// va--;
+// }
+// console.log(f);
