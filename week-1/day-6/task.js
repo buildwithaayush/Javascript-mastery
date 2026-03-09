@@ -126,89 +126,186 @@
 // // console.log(getStudentAverage(students[0]));
 // // console.log(getTopStudent(students));
 
-console.log("\n=== STRING PRACTICE PROBLEMS ===\n");
+// console.log("\n=== STRING PRACTICE PROBLEMS ===\n");
 
-// PROBLEM 1: Capitalize first letter
-function capitalize(str) {
-    let ans = str[0].toUpperCase()
-    return `${ans}${str.slice(1)}`
-  // "hello" -> "Hello"
-  // YOUR CODE
-}
+// // PROBLEM 1: Capitalize first letter
+// function capitalize(str) {
+//     let ans = str[0].toUpperCase()
+//     return `${ans}${str.slice(1)}`
+//   // "hello" -> "Hello"
+//   // YOUR CODE
+// }
 
-// PROBLEM 2: Count vowels
-function countVowels(str) {
-    let string = str.toLowerCase();
-    let count = 0 ;
-    for(let char of string){
-        if('aeiou'.includes(char)){
-            count++;
-        }
+// // PROBLEM 2: Count vowels
+// function countVowels(str) {
+//     let string = str.toLowerCase();
+//     let count = 0 ;
+//     for(let char of string){
+//         if('aeiou'.includes(char)){
+//             count++;
+//         }
 
-    }
-    return count
-  // "hello world" -> 3
-  // YOUR CODE
-}
+//     }
+//     return count
+//   // "hello world" -> 3
+//   // YOUR CODE
+// }
 
-// PROBLEM 3: Reverse string
-function reverseString(str) {
-    let ans = ''
-    for(let char of str ){
-       ans = char + ans 
-    }
-    return ans;
-  // "hello" -> "olleh"
-  // YOUR CODE
-}
+// // PROBLEM 3: Reverse string
+// function reverseString(str) {
+//     let ans = ''
+//     for(let char of str ){
+//        ans = char + ans 
+//     }
+//     return ans;
+//   // "hello" -> "olleh"
+//   // YOUR CODE
+// }
 
-// PROBLEM 4: Check palindrome
-function isPalindrome(str) {
-    const text = str.toLowerCase().split(" ").join('') 
-       let ans = ''
-    for(let char of text ){
-       ans = char + ans 
-    }
-    return text === ans
-  // "racecar" -> true
-  // "hello" -> false
-  // Ignore case and spaces
-  // YOUR CODE
-}
+// // PROBLEM 4: Check palindrome
+// function isPalindrome(str) {
+//     const text = str.toLowerCase().split(" ").join('') 
+//        let ans = ''
+//     for(let char of text ){
+//        ans = char + ans 
+//     }
+//     return text === ans
+//   // "racecar" -> true
+//   // "hello" -> false
+//   // Ignore case and spaces
+//   // YOUR CODE
+// }
   
 
 
-// PROBLEM 5: Get initials
-function getInitials(name) {
-    let nameArr = name.split(' ')
-    let ans = '';
-    for(const word of nameArr){
-        ans = ans + word[0];
-    }
-    return ans;
-  // "John Doe" -> "JD"
-  // "Alice Bob Charlie" -> "ABC"
-  // YOUR CODE
-}
+// // PROBLEM 5: Get initials
+// function getInitials(name) {
+//     let nameArr = name.split(' ')
+//     let ans = '';
+//     for(const word of nameArr){
+//         ans = ans + word[0];
+//     }
+//     return ans;
+//   // "John Doe" -> "JD"
+//   // "Alice Bob Charlie" -> "ABC"
+//   // YOUR CODE
+// }
 
-// PROBLEM 6: Title case
-function titleCase(str) {
-    const wordArr = str.split(' ')
-    let ans = []
-    for(const word of wordArr){
-        const change = word[0].toUpperCase() + word.slice(1)
-        ans.push(change)
-    }
-     return ans.join(' ')
+// // PROBLEM 6: Title case
+// function titleCase(str) {
+//     const wordArr = str.split(' ')
+//     let ans = []
+//     for(const word of wordArr){
+//         const change = word[0].toUpperCase() + word.slice(1)
+//         ans.push(change)
+//     }
+//      return ans.join(' ')
     
-  // "hello world from javascript" -> "Hello World From Javascript"
+//   // "hello world from javascript" -> "Hello World From Javascript"
+//   // YOUR CODE
+// }
+
+// // Test all functions
+// // console.log(capitalize("hello"));
+// // console.log(countVowels("javascript"));
+// // console.log(reverseString("hello"));
+// // console.log(isPalindrome("A man a plan a canal Panama"));
+// // console.log(getInitials("John Doe Smith"));
+// console.log(titleCase("hello world from javascript"));
+
+console.log("\n=== STRING CHALLENGES ===\n");
+
+// CHALLENGE 1: Slug generator
+function slugify(text) {
+    let ans = text.toLowerCase().replace(/[^a-z0-9 ]/gi,'').replaceAll(' ','-')
+    return ans
+  // "Hello World 123!" -> "hello-world-123"
+  // Remove special chars, lowercase, hyphens for spaces
   // YOUR CODE
 }
 
-// Test all functions
-// console.log(capitalize("hello"));
-// console.log(countVowels("javascript"));
-// console.log(reverseString("hello"));
-// console.log(isPalindrome("A man a plan a canal Panama"));
-// console.log(getInitials("John Doe Smith"));
-console.log(titleCase("hello world from javascript"));
+// CHALLENGE 2: Truncate with ellipsis
+function truncate(text, maxLength) {
+    if(text.length > maxLength-3){
+        return text.slice(0,maxLength) + '...'
+    }
+    return text
+  // If longer than maxLength, cut and add "..."
+  // "Hello World", 8 -> "Hello..."
+  // YOUR CODE
+}
+
+// CHALLENGE 3: Word frequency
+function wordFrequency(text) {
+    let str = text.toLowerCase().split(' ');
+    let result = {}
+    for(const word of str){
+        if(word in result){
+            result[word]++
+        }else{
+            result[word] = 1;
+        }
+    }
+    return result
+    
+  // Return object with word counts
+  // "hello world hello" -> {hello: 2, world: 1}
+  // Case-insensitive
+  // YOUR CODE
+}
+
+// CHALLENGE 4: Mask email
+function maskEmail(email) {
+    const [userName,domain] = email.split('@') 
+   const mask = userName[0]+ '***'+userName.at(-1)
+
+
+  // "john.doe@example.com" -> "j***e@example.com"
+  // Keep first and last letter of username
+  // YOUR CODE
+}
+
+// CHALLENGE 5: Extract hashtags
+function extractHashtags(text) {
+    // let hash = text.split('#')
+    // let result = []
+    // for(let i= 1; i < hash.length; i++){
+    //     result.push(hash[i])
+    // }
+    // return result;
+    let hash = text.split(' ')
+    let result = []
+   for(let word of hash){
+    if(word.startsWith('#')){
+        let ans = word.replace(/[^a-z0-9]/gi,'')
+        result.push(ans)
+    }
+   }
+    return result;
+
+
+  // "I love #javascript and #coding!" -> ["javascript", "coding"]
+  // YOUR CODE
+}
+
+// CHALLENGE 6: Validate username
+function isValidUsername(username) {
+    const check1 = (username.length >= 3 && username.length <= 16) 
+    const check2 = /[^a-z0-9_-]/gi.test(username)
+    const check3 = /^[a]/i.test(username)
+    let finalAns = check1 && check2 && check3
+  // Rules:
+  // - 3-16 characters
+  // - Only letters, numbers, underscore, hyphen
+  // - Must start with letter
+  // YOUR CODE
+}
+
+// // Test
+// console.log(slugify("Hello World 123!"));
+// console.log(truncate("This is a long text", 10));
+// console.log(wordFrequency("dog cat rat cat dog cat"));
+// console.log(maskEmail("john.doe@example.com"));
+// console.log(extractHashtags("I love #javascript and #coding!"));
+console.log(isValidUsername("john_doe"));
+console.log(isValidUsername("123invalid"));
