@@ -291,9 +291,10 @@ function extractHashtags(text) {
 // CHALLENGE 6: Validate username
 function isValidUsername(username) {
     const check1 = (username.length >= 3 && username.length <= 16) 
-    const check2 = /[^a-z0-9_-]/gi.test(username)
-    const check3 = /^[a]/i.test(username)
+    const check2 = !/[^a-z0-9_-]/gi.test(username)
+    const check3 = /^[a-z]/i.test(username)
     let finalAns = check1 && check2 && check3
+    return finalAns
   // Rules:
   // - 3-16 characters
   // - Only letters, numbers, underscore, hyphen
