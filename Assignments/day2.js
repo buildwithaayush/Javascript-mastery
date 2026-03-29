@@ -108,3 +108,27 @@ log("b"); // cancels previous, starts new 500ms timer
 log("c"); // cancels previous, starts new 500ms timer
 // Only "FIRED: c" prints — 500ms after the last call
 // WHY? Because timeoutId persists in the closure.
+
+// Create a createTodoList() function that returns an object with methods
+// Methods: addTodo(text), removeTodo(id), toggleTodo(id), getTodos(), getStats()
+function createTodoList(){
+  
+  return {
+  addTodo(text){
+    return text
+  },
+  removeTodo(id){
+
+  },
+  toggleTodo(id){
+
+  },
+  getTodos(){
+
+  },
+  getStats(){
+
+  }
+
+}
+}
