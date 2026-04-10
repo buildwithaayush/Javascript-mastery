@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 // 'This' method 
 
 // Rule:1 Default binding 
@@ -56,8 +56,26 @@
 // const p1 =  new Player('ayush',90);
 // console.log(p1)
 
-const ayush = {name:'ayush'}
-function sayHi(){
-    console.log(this.name + ' welcome')
-}
-sayHi.call(ayush)
+// const ayush = {name:'ayush'}
+// function sayHi(){
+//     console.log(this.name + ' welcome')
+// }
+// sayHi.call(ayush)
+
+
+// function Player(name, score) {
+//   // 'new' creates an empty object and sets this = that object
+//   this.name = name;    // adds 'name' property to the new object
+//   this.score = score;  // adds 'score' property to the new object
+//   // implicitly returns 'this' (the new object)
+// }
+
+// const p1 = new Player("Ayush", 100);
+// console.log(p1.name);  // "Ayush"
+// console.log(p1.score); // 100
+
+// // Without 'new':
+// const p2 = Player("Raj", 50); // this = global! Pollutes global scope!
+// console.log(p2); // undefined — regular functions return undefined by default
+
+console.log(this)   
