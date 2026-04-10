@@ -78,4 +78,60 @@
 // const p2 = Player("Raj", 50); // this = global! Pollutes global scope!
 // console.log(p2); // undefined — regular functions return undefined by default
 
-console.log(this)   
+// console.log(this)   // globalObject - window,global
+// function x(){
+// console.log(this)
+// }
+// x();
+// this substitution
+// if the value is undefined of null 
+// this keyword will be replace with globalObject only in non strict mode. 
+
+// const student = {
+//     name: 'ayush',
+//     printName: function(){
+//         console.log(this.name)
+//     }
+// }
+// // student.printName()
+
+// const student2 = {
+//     name:'Deepika'
+// }
+
+// student.printName.call(student2) 
+
+// let name = {
+//     firstname: 'ayush',
+//     lastname:  'singh',
+//     printFullName: function(hometown){
+//         console.log(this.firstname+' '+this.lastname + 'from ' + hometown);
+//     }
+// }
+// // name.printFullName()
+
+// let name1 = {
+//     firstname: 'vid',
+//     lastname:  '',
+//     printFullName: function(){
+//         console.log(this.firstname+' '+this.lastname);
+//     }
+// }
+
+// name.printFullName.call(name1)
+// the only diffrence between call and apply method is how we pass argument
+// name.printFullName.apply(name1,['indore'])
+// bind method 
+// let printMyName = name.printFullName.bind(name1,'indore','jabalpur')
+// console.log(printMyName);
+// printMyName()
+
+// how does arrow function behave with 'this' keyword. arrow function does not have its own
+// they take the value of there lexical envioronment where they are enclosed 
+const obj = {
+    a:10,
+    x:()=>{
+        console.log(this)
+    },
+}
+obj.x();
