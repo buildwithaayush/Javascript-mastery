@@ -164,22 +164,107 @@
 // // bind() permanently attaches 'this' to dog
 
 // Ex-4
-const button = {
-  label: "Submit",
-  handleClick() {
-    console.log("Clicked: " + this.label);
-  }
-};
+// const button = {
+//   label: "Submit",
+//   handleClick() {
+//     console.log("Clicked: " + this.label);
+//   }
+// };
 
-// Simulating passing method as a callback (like onClick)
-setTimeout(button.handleClick, 100); // What prints? WHY? 
-// ans - it will print handleclick function but not call handleclick function 
+// // Simulating passing method as a callback (like onClick)
+// setTimeout(button.handleClick, 100); // What prints? WHY? 
+// // ans - it will print handleclick function but not call handleclick function 
 
-// Fix 1: bind
-setTimeout(button.handleClick.bind(button), 100);
-// this print 'clicked submit'
+// // Fix 1: bind
+// setTimeout(button.handleClick.bind(button), 100);
+// // this print 'clicked submit'
 
-// Fix 2: arrow wrapper
-setTimeout(() => button.handleClick(), 100);
-// arrow function do not have there own this
-//  so they will point to globalObject which i guess is not object. it is browser so it will be undefined.
+// // Fix 2: arrow wrapper
+// setTimeout(() => button.handleClick(), 100);
+// // arrow function do not have there own this
+// //  so they will point to globalObject which i guess is not object. it is browser so it will be undefined.
+
+// const calculator = {
+//   value: 0,
+//   add(a, b) {
+//     this.value = a + b;
+//     return this.value;
+//   }
+// };
+
+// const sciCalc = { value: 0 };
+
+// // Borrow calculator's add method for sciCalc:
+// console.log(calculator.add.call(sciCalc, 10, 20)); // my ans 30
+// console.log(sciCalc.value); //my ans 0
+// console.log(calculator.value); // ? — did it change? no it will not change 
+
+// function Car(make, model) {
+//   console.log("this before:", this); // What is it ? my ans : this 'this' is refers to its global object window ? no. it  is its function car.
+//   this.make = make;
+//   this.model = model;
+//   this.describe = function() {
+//     console.log(this.make + " " + this.model);
+//   };
+//   console.log("this after:", this); // What is it now? now here i am confused and nervous. what is this describe thing like without any parameter we have created this. 
+//   // yet i think it will print car function.
+// }
+
+// const car1 = new Car("Toyota", "Camry");
+// car1.describe(); // it will print toyota camry
+
+// const car2 = Car("Honda", "Civic"); // No 'new'! What happens?
+// console.log(car2); // i don't know 
+// console.log(global.make); // ? (in Node) — did it pollute global? this is also i don't know 
+
+// const person = {
+//   name: "Ayush",
+//   hobbies: ["coding", "reading", "gaming"],
+
+//   // Method 1: Regular function inside forEach
+//   showHobbiesRegular() {
+//     this.hobbies.forEach(function(hobby) {
+//       console.log(this.name + " likes " + hobby); // Ayush
+//     });
+//   },
+
+//   // Method 2: Arrow function inside forEach
+//   showHobbiesArrow() {
+//     this.hobbies.forEach((hobby) => {
+//       console.log(this.name + " likes " + hobby); // Ayush because here i think that arrow function acts as a wrapper where as real function 
+//       // showHobbiesArrow
+//     });
+//   }
+// };
+
+// person.showHobbiesRegular(); // What prints?  // both will give same result.
+// person.showHobbiesArrow();   // What prints?
+
+// const person = {
+//   name: "Ayush",
+//   // Arrow function as a method — BAD!
+//   greet: () => {
+//     console.log("Hi, I'm " + this.name);
+//   }
+// };
+// person.greet();
+//  // What prints? WHY is this.name wrong?
+//  // ans 1: it will print 'hi, i'm undefined' because arrow function do not have there own 'this'
+// // Arrow functions don't get their own 'this' — they inherit from
+// // the SURROUNDING SCOPE where the object was created.
+// // The object literal {} is NOT a scope! So 'this' = global/module.
+
+// function identify() {
+//   console.log("I am " + this.name);
+// }
+
+// const obj1 = { name: "Object1", identify };
+// const obj2 = { name: "Object2" };
+
+// identify();                    // Line A: Rule default binding → this = indentify()
+// obj1.identify();               // Line B: Rule implicit  → this = obj1
+// identify.call(obj2);           // Line C: Rule explicit → this = obj2
+// new identify();                // Line D: Rule new  → this = new empty object
+// const bound = identify.bind(obj1);
+// bound();                       // Line E: Rule explicit  → this = obj1
+// bound.call(obj2);              // Line F: Rule explicit → this = error or obj1 only (tricky!) 
