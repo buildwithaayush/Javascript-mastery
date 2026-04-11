@@ -128,10 +128,58 @@
 
 // how does arrow function behave with 'this' keyword. arrow function does not have its own
 // they take the value of there lexical envioronment where they are enclosed 
-const obj = {
-    a:10,
-    x:()=>{
-        console.log(this)
-    },
-}
-obj.x();
+// const obj = {
+//     a:10,
+//     x:()=>{
+//         console.log(this)
+//     },
+// }
+// obj.x();
+
+//------------------------------------------------ Experiments --------------------------------------------------
+// Exp -1 
+// const dog = {
+//   name: "Bruno",
+//   bark() { console.log(this.name + " says Woof!"); }
+// };
+// dog.bark(); // Rule ? → this = ? // implicit 
+
+
+// Exp -2 
+// const dog = {
+//   name: "Bruno",
+//   bark() { console.log(this.name + " says Woof!"); }
+// };
+// const barkFn = dog.bark;
+// barkFn(); // Rule ? → this = ?
+// WHY did it change? What's to the left of the dot now?
+// i didn't understood what this ques is asking help me
+
+// const dog = {
+//   name: "Bruno",
+//   bark() { console.log(this.name + " says Woof!"); }
+// };
+// const boundBark = dog.bark.bind(dog);
+// boundBark(); // Rule ? → this = ?
+// // bind() permanently attaches 'this' to dog
+
+// Ex-4
+const button = {
+  label: "Submit",
+  handleClick() {
+    console.log("Clicked: " + this.label);
+  }
+};
+
+// Simulating passing method as a callback (like onClick)
+setTimeout(button.handleClick, 100); // What prints? WHY? 
+// ans - it will print handleclick function but not call handleclick function 
+
+// Fix 1: bind
+setTimeout(button.handleClick.bind(button), 100);
+// this print 'clicked submit'
+
+// Fix 2: arrow wrapper
+setTimeout(() => button.handleClick(), 100);
+// arrow function do not have there own this
+//  so they will point to globalObject which i guess is not object. it is browser so it will be undefined.
