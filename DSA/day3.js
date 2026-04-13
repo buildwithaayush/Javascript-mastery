@@ -35,3 +35,28 @@
 //    return -1
 // };
 
+// function createEventEmitter() {
+//     const events = {}; // closure: { eventName: [fn1, fn2, ...] }
+  
+//     return {
+//       on(event, listener) {
+//         // If events[event] doesn't exist, create an empty array
+//         // Push the listener to that array
+//         // Return 'this' for chaining
+//       },
+  
+//       emit(event, ...args) {
+//         // Find all listeners for this event
+//         // Call each one with the provided args
+//         // Return 'this' for chaining
+//       },
+  
+//       off(event, listener) {
+//         // Find the listeners array for this event
+//         // Remove the specific listener (filter it out)
+//         // Return 'this' for chaining
+//       }
+//     };
+//   }
+
+

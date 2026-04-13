@@ -268,3 +268,40 @@
 // const bound = identify.bind(obj1);
 // bound();                       // Line E: Rule explicit  → this = obj1
 // bound.call(obj2);              // Line F: Rule explicit → this = error or obj1 only (tricky!) 
+
+// function count(){
+//   let count = 0;
+//   function increment(){
+//     count++
+//     return count;
+//   }
+//   return increment;
+// }
+// let abc = count();
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+
+
+// challenge 3: 
+let test = {
+  name: 'ayush',
+  greet(){
+    console.log('welcome ' + this.name)
+  }
+}
+
+let obj1 = {
+  name: 'vishal'
+}
+
+
+test.greet()
+const welcome = test.greet.bind(test)
+welcome()
+const newWelcome = new greet()
+newWelcome()
+
+
+// const fn = test.greet;
+// fn();
