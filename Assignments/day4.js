@@ -77,11 +77,33 @@ class Boss extends Enemy{
 
 
 
-let player = new Player('ayush',1000,1,80);
-let boss = new Boss('demon',10,22,1)
-boss.attack(player)
-console.log(player.isAlive())
-player.gainXp(100)
-boss.enrage()
-boss.attack(player)
-console.log(player.describe())
+// let player = new Player('ayush',1000,1,80);
+// let boss = new Boss('demon',10,22,1)
+// boss.attack(player)
+// console.log(player.isAlive())
+// player.gainXp(100)
+// boss.enrage()
+// boss.attack(player)
+// console.log(player.describe())
+
+
+
+
+
+
+
+const dog = {
+    
+    says(name){
+        console.log(this.name + ' says whoof !')
+    }
+}
+
+dog.says('sheru')
+
+// let d1 = {
+//     name: 'rojer'
+// }
+
+// let bark = dog.says.bind(d1)
+// bark();
