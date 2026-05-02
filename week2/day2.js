@@ -21,3 +21,29 @@
 // btn.addEventListener("click", changeBackground); 
 // btn.addEventListener('click',sayHello)
 
+// callback 
+
+function step1(init , callback){
+    const result = init + 1;
+    callback(result)
+}
+function step2(init , callback){
+    const result = init + 2;
+    callback(result)
+}
+function step3(init , callback){
+    const result = init + 3;
+    callback(result)
+}
+
+function doOperation(){
+    step1(2,(result1)=>{
+        step2(result1,(result2)=>{
+            step3(result2,(result3)=>{
+                console.log(result3)
+            })
+        })
+    })
+}
+
+doOperation()
