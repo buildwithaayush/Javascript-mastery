@@ -70,22 +70,66 @@
 // let ans = permutationEquation(arr);
 // console.log(ans)
 
-let arr = ['dkf','jac','fzox']
+
+
+
+function gridChallenge(grid) {
 let result = []
-for(let i = 0 ; i < arr.length ; i++){
+for(let i = 0 ; i < grid.length ; i++){
     
-    let ans = arr[i]
+    let ans = grid[i]
     let splitans = ans.split('');
     let sortedans = splitans.sort()
     let joined = sortedans.join('')
      
-     result.push(joined)
-   
-   
-}
-
-for(let i = 0 ; i < arr.length; i++){
+    result.push(joined)
     
 }
-  console.log(result)
+for(let col = 0 ; col < result[0].length ; col++){
+    for(let row = 0 ; row < result.length-1; row++){
+    if(result[row][col]>result[row+1][col]){
+    return 'NO';
+    }
+    }
+}
+   
+   return 'YES'
+}
 
+function angryProfessor(k, a) {
+    let count = 0 ;
+    for(let i = 0 ; i < a.length; i++){
+        if(a[i]<=0){
+            count++;
+        }
+    }
+    if(count >= k){
+        return 'YES'
+    }
+    else{
+        return 'NO'
+    }
+
+}
+
+function squares(a, b) {
+   let top = Math.ceil(Math.sqrt(a));
+   let bottom = Math.floor(Math.sqrt(b))
+
+   return bottom - top+1;
+
+}
+
+let arr = ['100','50','20','10']
+// 
+function bigSorting(unsorted) {
+   unsorted.sort((a,b)=>{
+    if(a.length !== b.length){
+        return a.length - b.length;
+    }
+    return a.localeCompare(b);
+   })
+
+}
+
+bigSorting(arr);
